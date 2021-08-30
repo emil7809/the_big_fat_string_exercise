@@ -28,8 +28,26 @@ function generate() {
     } else if (select === "5"){
         output = input.endsWith(".jpg");
     } else if (select === "6"){
-        output = input.indexOf(" "), input.replaceAll(input, `*`);
-    } else {
+        output = input.replaceAll(input, `*`).repeat(input.length);
+    } else if (select === "7"){
+        output = input[0].toLowerCase()+input[1].toLocaleLowerCase()+input[2].toUpperCase()+input.slice(1);
+    }  else if (select === "8"){
+
+        let length = input.length;
+
+        let i = 1;
+        let temp = input[0];
+
+        for (i = 1; i < length; i++) {
+
+          if (input[i - 1] == " " || input[i - 1] == "-") {
+            temp += input[i].toUpperCase();
+          } else {
+            temp += input[i].toLowerCase();
+          }
+        }
+        output = temp;
+    }  else {
         output = "I made it this far LOVE ME";
     };
 
